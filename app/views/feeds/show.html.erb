@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @feed.image.url, class: "img"  %>
+</p>
+<p class="abc">Contents: <%= @feed.content %></p>
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>
+
+<footer class="footer">
+  <p>Copyright © 2022 DIVE INC All RIGHTS RESERVED.</p>
+</footer>

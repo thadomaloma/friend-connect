@@ -1,0 +1,16 @@
+<h1>confirmation screen</h1>
+<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+
+  <% if @feed.image && @feed.image.url %>
+    <%= image_tag @feed.image.url, class: "img" %>
+  <% end %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.hidden_field :content %>
+  <p class="abc">Text:<%= @feed.content %></p>
+  <%= form.submit "Post" %>
+<% end %>
+
+<%= form_with(model:@feed, url:new_feed_path, local:true, method:"get") do |form| %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "Return", name: "back" %>
+<% end %>
